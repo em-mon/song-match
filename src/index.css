@@ -1,0 +1,65 @@
+:root {
+  font-weight: 400;
+
+  color-scheme: light dark;
+  background-color: #b6ccba;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.landing {
+  color: #d02e82;
+  font-family: 'Anton', sans-serif;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 200px;
+}
+
+.landing h1 {
+  font-size: 130px;
+  margin: 0; /* reset default margin */
+}
+
+.landing h2 {
+  font-size: 35px;
+  margin: 0; /* reset default margin */
+}
+
+.getStarted button {
+  background-color: #c32677;
+  width: 130px;
+  height: 60px;
+  padding: 0 20px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  font-family: 'Anton', sans-serif;
+  border: none;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
+.getStarted button:hover {
+  background-color: #ae2c6f;
+  color: rgb(228, 228, 228);
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  display: flex;
+  place-items: center;
+  min-height: 100vh;
+}
