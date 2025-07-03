@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function Landing() {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/home");
+    };
+    
     return (
     <div className="landing">
         <div>
@@ -21,7 +28,8 @@ export default function Landing() {
             <motion.button
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 2, delay: 3.5 }}>
+            transition={{ duration: 2, delay: 3.5 }}
+            onClick={handleClick}>
                 Get started!
             </motion.button>
         </div>

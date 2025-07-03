@@ -11,13 +11,15 @@
 }
 
 .landing {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   color: #d02e82;
   font-family: 'Anton', sans-serif;
   text-align: left;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 200px;
+  height: 100vh;
 }
 
 .landing h1 {
@@ -30,18 +32,21 @@
   margin: 0; /* reset default margin */
 }
 
+.getStarted {
+  margin-top: 28%;
+}
+
 .getStarted button {
   background-color: #c32677;
-  width: 130px;
-  height: 60px;
+  width: 150px;
+  height: 80px;
   padding: 0 20px;
   color: white;
-  font-size: 18px;
+  font-size: 23px;
   cursor: pointer;
   font-family: 'Anton', sans-serif;
   border: none;
-  margin-left: 20px;
-  margin-bottom: 30px;
+  border-radius: 25px;
 }
 
 .getStarted button:hover {
@@ -49,17 +54,64 @@
   color: rgb(228, 228, 228);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+.home {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
-body {
+.welcome {
   display: flex;
-  place-items: center;
-  min-height: 100vh;
+  align-items: center;     /* vertical centering */
+  padding-left: 28px;
+  margin-top: 20px;
+  height: 100px;
+  width: 100%;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.welcome h1 {
+  color: #c32677;
+  font-family: 'Anton', sans-serif;
+  font-size: 80px;
+}
+
+.main {
+  width: 95%;
+  height: 80vh;
+  margin-top: 10px;
+  background-color: #c32677;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Shared column styles */
+.first,
+.second,
+.third {
+  height: 90%;
+  flex: 1; /* ensures equal width for all */
+  border-right: .5px solid white;
+  box-sizing: border-box;
+}
+
+/* Remove right border from the last one */
+.third {
+  border-right: none;
+}
+
+.numbers {
+  border: 1px solid white;
+  border-radius: 100%;
+  width: 57px;
+  height: 60px;
+  margin-left: 18px;
+  font-family: 'Anton', sans-serif;
+  font-size: 30px;
+  display: flex;
+  align-items: center;   
+  justify-content: center;
 }

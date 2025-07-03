@@ -1,11 +1,15 @@
-import './App.css'
-import Landing from './components/Landing.tsx'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Landing from './pages/Landing';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <>
-      <Landing />
-    </>
+    <BrowserRouter basename="/">
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
