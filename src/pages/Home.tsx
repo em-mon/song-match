@@ -1,10 +1,15 @@
+import { motion } from "framer-motion";
+
 export default function Home() {
   return (
     <div className="home">
         <div className="welcome">
-            <h1>
+            <motion.h1
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 3, delay: 0 }}>
                 WELCOME USER!
-            </h1>
+            </motion.h1>
         </div>
         <div className="main">
             <div className="first">
