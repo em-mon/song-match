@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
     const [token, setToken] = useState<string | null>(null);
+    const [name, setName] = useState<string>("");
 
     useEffect(() => {
         const hash = window.location.hash;
@@ -23,6 +24,27 @@ export default function Home() {
         }
     }, []);
 
+    // Fetch user's display name from Spotify
+    useEffect(() => {
+        if (token) {
+            fetch("https://api.spotify.com/v1/me", {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.display_name) {
+                    setName(data.display_name.toUpperCase());
+                }
+
+                else {
+                    setName("");
+                }
+            })
+        }
+    }, [token]);
+
     return (
     <div className="home">
         <div className="welcome">
@@ -30,7 +52,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 3, delay: 0 }}>
-                WELCOME USER!
+                  {`WELCOME${name ? ' ' + name : ''}!`}
             </motion.h1>
         </div>
         <div className="main">
