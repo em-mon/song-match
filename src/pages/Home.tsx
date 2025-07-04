@@ -1,8 +1,29 @@
 import { motion } from "framer-motion";
 import arrow from '../media/arrow2.png'; 
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  return (
+    const [token, setToken] = useState<string | null>(null);
+
+    useEffect(() => {
+        const hash = window.location.hash;
+        const accessToken = new URLSearchParams(hash.substring(1)).get("access_token");
+
+        if (accessToken) {
+            setToken(accessToken)
+            localStorage.setItem("spotify_token", accessToken);
+            window.location.hash = "";
+        }
+
+        else {
+            const storedToken = localStorage.getItem("spotify_token");
+            if (storedToken) {
+                setToken(storedToken);
+            }
+        }
+    }, []);
+
+    return (
     <div className="home">
         <div className="welcome">
             <motion.h1

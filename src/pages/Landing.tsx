@@ -5,7 +5,14 @@ export default function Landing() {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate("/home");
+        const client_id = "a5b2e7e7a6fd45468a8fd8a218e69fc0";
+        const redirect_uri = "https://song-match-three.vercel.app/home";
+        const scope = "user-library-read user-read-private";
+        
+        const auth_endpoint = "https://accounts.spotify.com/authorize";
+        const auth_url = `${auth_endpoint}?client_id=${client_id}&response_type=token&redirect_uri=${encodeURIComponent(redirect_uri)}&scope=${encodeURIComponent(scope)}`;
+
+        window.location.href = auth_url;
     };
     
     return (
