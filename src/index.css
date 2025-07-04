@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   font-weight: 400;
 
@@ -111,7 +115,6 @@
   border-radius: 100%;
   width: 57px;
   height: 60px;
-  margin-left: 18px;
   font-family: 'Anton', sans-serif;
   font-size: 30px;
   display: flex;
@@ -156,7 +159,23 @@
 }
 
 .main img {
-  height: 150px;
+  height: 120px;
   width: 100px;
-  margin-left: 10px;
+  cursor: pointer;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  width: auto;
+}
+
+.workArea {
+  display: flex;
+  flex-direction: row;
+  border: white 2px solid;
+  height: 100vh;
+  width: 95%;
 }

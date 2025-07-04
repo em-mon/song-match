@@ -40,10 +40,19 @@ export default function Home() {
                     3
                 </div>
                 <h2>
-                    See which songs matched here:
+                    See which songs matched below:
                 </h2>
-                <img src={arrow} alt="arrow">
-                </img>
+                <a href="#res">
+                    <img src={arrow} alt="arrow"></img>
+                </a>
+            </div>
+        </div>
+        <div id="res" className="workArea">
+            <div className="imageDrop">
+
+            </div>
+            <div className="results">
+
             </div>
         </div>
     </div>
