@@ -34,7 +34,7 @@ export default function Home() {
             })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                console.log(data);
                 if (data.display_name) {
                     setName(data.display_name.toUpperCase());
                 }
