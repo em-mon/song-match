@@ -11,6 +11,10 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
+    "axios": "^1.10.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
     "framer-motion": "^12.23.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -28,5 +32,18 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.34.1",
     "vite": "^7.0.0"
-  }
+  },
+  "description": "Users can upload an image, and through object detection, facial analysis, and visual sentiment recognition, the app recommends the most compatible songs from their Spotify library to match the mood and content of the image.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/em-mon/song-match.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/em-mon/song-match/issues"
+  },
+  "homepage": "https://github.com/em-mon/song-match#readme"
 }
