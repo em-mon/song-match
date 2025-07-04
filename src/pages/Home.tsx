@@ -7,20 +7,47 @@ export default function Home() {
     const [name, setName] = useState<string>("");
 
     useEffect(() => {
-        const hash = window.location.hash;
-        const accessToken = new URLSearchParams(hash.substring(1)).get("access_token");
+        const query = new URLSearchParams(window.location.search);
+        const code = query.get("code");
 
-        if (accessToken) {
-            setToken(accessToken)
-            localStorage.setItem("spotify_token", accessToken);
-            window.location.hash = "";
+        const codeVerifier = localStorage.getItem("code_verifier");
+
+        async function exchangeToken() {
+            if (!code || !codeVerifier) return;
+
+            const response = await fetch("https://accounts.spotify.com/api/token", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: new URLSearchParams({
+                    client_id: "a5b2e7e7a6fd45468a8fd8a218e69fc0",
+                    grant_type: "authorization_code",
+                    code,
+                    redirect_uri: "https://song-match-three.vercel.app/home",
+                    code_verifier: codeVerifier,
+                }),
+            });
+
+            const data = await response.json();
+            console.log("Token response:", data);
+
+            if (data.access_token) {
+                localStorage.setItem("spotify_token", data.access_token);
+                setToken(data.access_token);
+
+                // Clean up the URL
+                const newUrl = new URL(window.location.href);
+                newUrl.search = "";
+                window.history.replaceState({}, document.title, newUrl.toString());
+            }
         }
 
-        else {
-            const storedToken = localStorage.getItem("spotify_token");
-            if (storedToken) {
-                setToken(storedToken);
-            }
+        const existingToken = localStorage.getItem("spotify_token");
+        if (existingToken) {
+            setToken(existingToken);
+        } else {
+            exchangeToken();
         }
     }, []);
 
