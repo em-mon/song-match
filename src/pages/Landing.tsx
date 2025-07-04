@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 
 export default function Landing() {
-    const navigate = useNavigate();
 
     const handleClick = () => {
         const client_id = "a5b2e7e7a6fd45468a8fd8a218e69fc0";
