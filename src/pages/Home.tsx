@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import arrow from '../media/arrow2.png'; 
 
 export default function Home() {
   return (
@@ -16,16 +17,33 @@ export default function Home() {
                 <div className="numbers">
                     1
                 </div>
+                <h2>
+                    Choose a picture to upload:
+                </h2>
+                <button>
+                    UPLOAD
+                </button>
             </div>
             <div className="second">
                 <div className="numbers">
                     2
                 </div>
+                <h2>
+                    Get songs that match the chosen image:
+                </h2>
+                <button>
+                    START MATCHING
+                </button>
             </div>
             <div className="third">
                 <div className="numbers">
                     3
                 </div>
+                <h2>
+                    See which songs matched here:
+                </h2>
+                <img src={arrow} alt="arrow">
+                </img>
             </div>
         </div>
     </div>

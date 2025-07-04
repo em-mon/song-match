@@ -79,7 +79,7 @@
 
 .main {
   width: 95%;
-  height: 80vh;
+  height: 35vh;
   margin-top: 10px;
   background-color: #c32677;
   display: flex;
@@ -96,6 +96,9 @@
   flex: 1; /* ensures equal width for all */
   border-right: .5px solid white;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Remove right border from the last one */
@@ -114,4 +117,46 @@
   display: flex;
   align-items: center;   
   justify-content: center;
+}
+
+.main h2 {
+  color: white;
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+  font-size: 26px;
+}
+
+.first button {
+  width: 100px;
+  font-family: 'Anton', sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  background-color: #c32677;
+  border: white 1px solid;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 10%;
+}
+
+.second button {
+  width: 150px;
+  font-family: 'Anton', sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  background-color: #c32677;
+  border: white 1px solid;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 10%;
+}
+
+.first button:hover,
+.second button:hover {
+  background-color: #e22a89;
+}
+
+.main img {
+  height: 150px;
+  width: 100px;
+  margin-left: 10px;
 }
